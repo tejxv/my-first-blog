@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TheOpenBlog</title>
+</head>
+<style>
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
+html {
+    text-align: center;
+    background-color: lavender;
+}
+
+html,
+body {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    baseline-shift: sub;
+    text-decoration: underline;
+}
+
+h1 {
+    border: 0px solid red;
+    background-color: lightblue;
+    max-width: 100%;
+    margin-top: 50px;
+    margin: 0px auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 7rem;
+
+}
+
+.credits {
+    max-width: 700px;
+    border: 0px solid black;
+    margin: 0px auto;
+    margin-top: 5px;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.admin {
+    max-width: 700px;
+    text-align: left;
+    border: 0px solid black;
+    margin: 0px auto;
+    font-size: 20px;
+    padding-top: 20px;
+
+}
+
+.posts {
+    font-size: 20px;
+    padding: 10px 51px;
+    margin: 40px auto;
+    border: 0px solid red;
+    max-width: 690px;
+    border-radius: 5px;
+    text-align: left;
+    background-color: ghostwhite;
+    font-family: inter;
+    box-shadow:
+        0 3.4px 3.1px rgba(0, 0, 0, 0.21),
+        0 8.7px 7.9px rgba(0, 0, 0, 0.145),
+        0 17.7px 16.1px rgba(0, 0, 0, 0.117),
+        0 36.5px 33.2px rgba(0, 0, 0, 0.093),
+        0 100px 91px rgba(0, 0, 0, 0.065);
+}
+.text {
+    font-size: 1.2rem;
+}
+.date {
+    color: grey;
+    font-size: 1rem;
+}
+</style>
+<h1><a href="http://tejxv.pythonanywhere.com/" style="text-decoration: none; color: black;">&nbsp;TheOpenBlog.&nbsp;</a><br></h1>
+<div class="credits">→ Project by<a href="https://www.instagram.com/tejxv/" style="text-decoration: none;">&nbsp;tejas,</a><a href="https://www.instagram.com/vats_nipun/" target="_blank" style="text-decoration: none;"> nipun </a>& himanshu, developed using Django & Python.<a href="https://tejxv.pythonanywhere.com/admin/" target="_blank" title="Login" style="text-decoration: none;">&nbsp;Ξ&nbsp;</a></div><br>
+<div class="postbtn"><button>POST AN UPDATE!</button></div>
+
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
