@@ -3,6 +3,7 @@
 
 <head>
     <title>TheOpenBlog</title>
+    <script src="https://kit.fontawesome.com/af18556798.js" crossorigin="anonymous"></script>
 </head>
 <style>
 @import url('https://rsms.me/inter/inter.css');
@@ -93,10 +94,46 @@ h1 {
     color: grey;
     font-size: 1rem;
 }
+.submit {
+  border: 2px solid blue;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: blue;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2rem;
+  width: 200px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+.submit:hover {
+    background-color: lightblue;
+}
+.submit:active {
+    background-color: blue;
+}
+
+.compose {
+    font-size: 2rem;
+    margin: 0px auto;
+    max-width: 400px;
+}
+.compose:hover {
+    color: blue;
+}
+.gohome {
+    font-size: 1.2rem;
+
+}
 </style>
 <h1><a href="http://tejxv.pythonanywhere.com/" style="text-decoration: none; color: black;">&nbsp;TheOpenBlog.&nbsp;</a><br></h1>
 <div class="credits">→ Project by<a href="https://www.instagram.com/tejxv/" style="text-decoration: none;">&nbsp;tejas,</a><a href="https://www.instagram.com/vats_nipun/" target="_blank" style="text-decoration: none;"> nipun </a>& himanshu, developed using Django & Python.<a href="https://tejxv.pythonanywhere.com/admin/" target="_blank" title="Login" style="text-decoration: none;">&nbsp;Ξ&nbsp;</a></div><br>
-<div class="postbtn"><button>POST AN UPDATE!</button></div>
+
+<div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">POST AN UPDATE <i class="far fa-plus-square"></i></span></a></div>
 
 <body>
     {% block content %}
