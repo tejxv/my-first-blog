@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 <br>
-    <div style="font-size: 1.2rem;">latest posts will appear on the bottom of the website!</div>
+    <div style="font-size: 1rem;">Latest posts will appear on top of the website!</div>
     <div class="posts"><form method="POST" class="token">{% csrf_token %}
         {{ form.as_p }}
         <center><button type="submit" class="submit"> POST </button></center>

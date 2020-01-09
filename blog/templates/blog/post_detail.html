@@ -5,9 +5,8 @@
     <div class="date">Posted on {{ post.published_date }} IST</div>
     {% endif %}
     {% if user.is_authenticated %}
-    <div><a href="{% url 'post_edit' pk=post.pk %}" style="text-decoration: none;"><br> Edit Post <i class="far fa-edit"></i></span></a></div>
+    <div><a href="{% url 'post_edit' pk=post.pk %}" style="text-decoration: none;"><br> <i class="far fa-edit"></i> Edit Post</a></div>
     {% endif %}
-
     <h2>{{ post.title }}</h2>
     <div class="text"><p>{{ post.text|linebreaksbr }}</p></div>
 </div>
