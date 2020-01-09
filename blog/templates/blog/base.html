@@ -159,6 +159,9 @@ h2 {
 <div class="credits">→ Project by&nbsp;<a href="https://www.instagram.com/tejxv/" style="text-decoration: underline;">tejas,</a>&nbsp;<a href="https://www.instagram.com/vats_nipun/" target="_blank" style="text-decoration: underline;">nipun</a>&nbsp;& himanshu, developed using Django & Python.<a href="https://tejxv.pythonanywhere.com/admin/" target="_blank" title="Login" style="text-decoration: none;">&nbsp;<i class="fas fa-cog"></i>&nbsp;</a></div><br>
 
 <div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">POST AN UPDATE <i class="far fa-plus-square"></i></span></a></div>
+{% if user.is_authenticated %}
+<div style="margin: 10px 0px;">Logged in as: {{request.user}}</div>
+{% endif %}
 
 <body>
     {% block content %}
