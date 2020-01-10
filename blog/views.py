@@ -24,7 +24,6 @@ def post_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             if request.user.is_authenticated:
-            	pass 
             	post.author = request.user	
             post.published_date = timezone.now()
             post.save()

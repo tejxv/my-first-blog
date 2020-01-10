@@ -1,5 +1,8 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+<head>
+	<title>Post New Update - TheOpenBlog</title>
+</head>
 <br>
     <div style="font-size: 1rem;">Latest posts will appear on top of the website!</div>
     <div class="posts"><form method="POST" class="token">{% csrf_token %}

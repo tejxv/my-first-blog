@@ -2,11 +2,15 @@
 <html>
 
 <head>
+    {% if post.title %}
+    <title>{{ post.title }} - TheOpenBlog</title>
+    {% else %}
     <title>TheOpenBlog</title>
+    {% endif %}
     <script src="https://kit.fontawesome.com/af18556798.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <style>
 @import url('https://rsms.me/inter/inter.css');
@@ -32,15 +36,15 @@ body {
     height: 100%;
     width: 100%;
 }
+
 a {
     text-decoration: none;
     color: black;
     transition: all .2s ease-in-out;
 }
+
 a:hover {
     color: #ab8989;
-    baseline-shift: sub;
-    text-decoration: none;
 }
 
 h1 {
@@ -98,29 +102,34 @@ h2 {
         0 36.5px 33.2px rgba(0, 0, 0, 0.093),
         0 100px 91px rgba(0, 0, 0, 0.065);
 }
+
 .text {
     font-size: 1.2rem;
 }
+
 .date {
     color: grey;
     font-size: 1rem;
 }
+
 .submit {
-  border: 2px solid blue;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  color: blue;
-  padding: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 2rem;
-  width: 200px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
+    border: 2px solid blue;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: blue;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2rem;
+    width: 200px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 
 }
+
 .submit:hover {
     background-color: gold;
     color: black;
@@ -132,6 +141,7 @@ h2 {
         0 36.5px 33.2px rgba(0, 0, 0, 0.093),
         0 100px 91px rgba(0, 0, 0, 0.065);
 }
+
 .submit:active {
     background-color: grey;
     border: 2px solid black;
@@ -144,9 +154,11 @@ h2 {
     margin: 0px auto;
     max-width: 100%;
 }
+
 .compose:hover {
     color: blue;
 }
+
 .gohome {
     font-size: 1.2rem;
 }
@@ -157,8 +169,13 @@ h2 {
 </style>
 <h1><a href="http://tejxv.pythonanywhere.com/" style="text-decoration: none; color: black;">&nbsp;TheOpenBlog.&nbsp;</a><br></h1>
 <div class="credits">→ Project by&nbsp;<a href="https://www.instagram.com/tejxv/" style="text-decoration: underline;">tejas,</a>&nbsp;<a href="https://www.instagram.com/vats_nipun/" target="_blank" style="text-decoration: underline;">nipun</a>&nbsp;& himanshu, developed using Django & Python.<a href="https://tejxv.pythonanywhere.com/admin/" target="_blank" title="Login" style="text-decoration: none;">&nbsp;<i class="fas fa-cog"></i>&nbsp;</a></div><br>
+{% if user.is_anonymous %}
+<div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Post Anonymously <i class="far fa-plus-square"></i></span></a></div>
+<a href="/admin"><br>Or Login in with existing Account</a>
+{% elif user.is_authenticated %}
+<div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Post as {{request.user|capfirst}} <i class="far fa-plus-square"></i></span></a></div>
+{% endif %}
 
-<div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">POST AN UPDATE <i class="far fa-plus-square"></i></span></a></div>
 {% if user.is_authenticated %}
 <div style="margin: 10px 0px;">Logged in as: {{request.user}}</div>
 {% endif %}
