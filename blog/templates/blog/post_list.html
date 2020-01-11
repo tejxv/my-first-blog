@@ -9,9 +9,9 @@
             </b></mark>
             </div>
             <div class="text">
-                <p>{{ post.text|truncatechars:400 }}</p>
+                <p>{{ post.text|truncatechars:200|linebreaksbr }}</p>
             </div>
-            {% if post.text|length > 400 %}
+            {% if post.text|length > 200 %}
             <div class="dots">
                 <div class="text" style="text-align: left;"><a href="{% url 'post_detail' pk=post.pk %}" title="Open Post">&nbsp;•••&nbsp;</a></div>
             </div>
