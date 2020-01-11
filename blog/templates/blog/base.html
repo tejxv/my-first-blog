@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/af18556798.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <style>
 @import url('https://rsms.me/inter/inter.css');
@@ -34,10 +34,12 @@ html,
 body {
     margin: 0px;
     height: 100%;
-    width: 100%;
+    width: auto;
+    background-color: lavender;
 }
 
 a {
+    font-family: 'Inter';
     text-decoration: none;
     color: black;
     transition: all .2s ease-in-out;
@@ -45,30 +47,37 @@ a {
 
 a:hover {
     color: #ab8989;
+    text-decoration: none;
 }
 
 h1 {
+    font-family: 'Inter';
     border: 0px solid red;
     background-color: gold;
-    max-width: 100%;
     margin-top: 50px;
     margin: 0px auto;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-size: 7rem;
+    font-size: 7vw;
 }
 
-h2 {
-    border: 0px solid black;
-    font-family: "Fjalla One";
+.text-left {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 0px solid red;
+    font-size: 1.5rem;
+    font-family: 'Fjalla One';
 }
 
+mark{
+    background-color: gold;
+}
 .credits {
-    max-width: 700px;
+    font-family: 'Inter';
+    background-color: yellow;
     border: 0px solid black;
     margin: 0px auto;
-    margin-top: 5px;
     text-align: center;
     font-size: 1.2rem;
 }
@@ -84,16 +93,15 @@ h2 {
 }
 
 .posts {
+    font-family: 'Inter';
     font-size: 20px;
-    padding: 20px 30px;
+    padding: 0px 20px;
     margin: 40px auto;
-    border: 0px solid red;
+    border: 1px solid cyan;
     max-width: 600px;
-    width: 600px;
     border-radius: 5px;
     text-align: left;
     background-color: ghostwhite;
-    font-family: inter;
     overflow: auto;
     box-shadow:
         0 3.4px 3.1px rgba(0, 0, 0, 0.21),
@@ -102,7 +110,19 @@ h2 {
         0 36.5px 33.2px rgba(0, 0, 0, 0.093),
         0 100px 91px rgba(0, 0, 0, 0.065);
 }
-
+.dots {
+    border: 1px solid cyan;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.dots:hover {
+    background-color: gold;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #ab8989;
+}
 .text {
     font-size: 1.2rem;
 }
@@ -117,7 +137,7 @@ h2 {
     margin-bottom: 10px;
     border-radius: 5px;
     color: blue;
-    padding: 5px;
+    padding: 0px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -125,9 +145,29 @@ h2 {
     width: 200px;
     -webkit-transition-duration: 0.4s;
     /* Safari */
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
     cursor: pointer;
 
+}
+
+.forms {
+    font-family: 'Inter';
+    font-size: 20px;
+    padding: 0px 40px;
+    padding-bottom: 40px;
+    margin: 40px auto;
+    border: 1px solid cyan;
+    max-width: 600px;
+    border-radius: 5px;
+    text-align: left;
+    background-color: ghostwhite;
+    overflow: auto;
+    box-shadow:
+        0 3.4px 3.1px rgba(0, 0, 0, 0.21),
+        0 8.7px 7.9px rgba(0, 0, 0, 0.145),
+        0 17.7px 16.1px rgba(0, 0, 0, 0.117),
+        0 36.5px 33.2px rgba(0, 0, 0, 0.093),
+        0 100px 91px rgba(0, 0, 0, 0.065);
 }
 
 .submit:hover {
@@ -143,15 +183,15 @@ h2 {
 }
 
 .submit:active {
-    background-color: grey;
     border: 2px solid black;
-    color: gold;
 }
 
 .compose {
+    font-family: 'Inter';
+    text-align: center;
     border: 0px solid red;
     font-size: 2rem;
-    margin: 0px auto;
+    margin: 5px auto;
     max-width: 100%;
 }
 
@@ -163,29 +203,42 @@ h2 {
     font-size: 1.2rem;
 }
 
+
 @media (max-width: 400px) {
     /** WIP **/
 }
 </style>
-<h1><a href="http://tejxv.pythonanywhere.com/" style="text-decoration: none; color: black;">&nbsp;TheOpenBlog.&nbsp;</a><br></h1>
+
+<h1><b><a href="http://tejxv.pythonanywhere.com/" style="text-decoration: none; color: black;">&nbsp;TheOpenBlog.&nbsp;</a></b></h1>
 <div class="credits">→ Project by&nbsp;<a href="https://www.instagram.com/tejxv/" style="text-decoration: underline;">tejas,</a>&nbsp;<a href="https://www.instagram.com/vats_nipun/" target="_blank" style="text-decoration: underline;">nipun</a>&nbsp;& himanshu, developed using Django & Python.<a href="https://tejxv.pythonanywhere.com/admin/" target="_blank" title="Login" style="text-decoration: none;">&nbsp;<i class="fas fa-cog"></i>&nbsp;</a></div><br>
 {% if user.is_anonymous %}
-<div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Post Anonymously <i class="far fa-plus-square"></i></span></a></div>
-<a href="/admin"><br>Or Login in with existing Account</a>
+<div class="text-center">
+        <a href="/login">LOGIN</a>
+        <b>&nbsp;|&nbsp;</b>
+        <a href="/register">SIGN UP</a>
+</div>
 {% elif user.is_authenticated %}
-<div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Post as {{request.user|capfirst}} <i class="far fa-plus-square"></i></span></a></div>
+<div class="text-center">
+    <div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Type something as {{request.user|capfirst}} <i class="far fa-plus-square"></i></span></a></div>
+    <a href="/logout">LOGOUT</a>
+</div>    
 {% endif %}
 
 {% if user.is_authenticated %}
-<div style="margin: 10px 0px;">Logged in as: {{request.user}}</div>
 {% endif %}
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <body>
-    {% block content %}
-    {% endblock %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="text-center">
+            <div class="posts">
+                <b>- {{ message }}</b>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
 </body>
-<br>
-<br>
-<br>
-
 </html>

@@ -1,20 +1,26 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 {% for post in posts %}
-<center>
-    <div class="posts">
-        <h2><mark>&nbsp;<a href="{% url 'post_detail' pk=post.pk %}" title="Open Post">{{ post.title|upper }}</a>&nbsp;</mark>
-        </h2>
-        <div class="text">
-            <p>{{ post.text|truncatechars:400 }}</p>
-        </div>
-        {% if post.text|length > 400 %}
-        <div class="text" style="text-align: left;"><a href="{% url 'post_detail' pk=post.pk %}" title="Open Post">&nbsp;•••&nbsp;</a></div>
-        {% endif %}
-        <div class="date">        	
-            <p>Posted by {{ post.author|default_if_none:"Anonymous User"|capfirst}} on {{ post.published_date }}</p>
+<div>
+    <div class="blockquote text-center">
+        <div class="posts">
+        	<div class="text-left">
+            <mark><b>&nbsp;<a href="{% url 'post_detail' pk=post.pk %}" title="Open Post">{{ post.title|upper }}</a>&nbsp;
+            </b></mark>
+            </div>
+            <div class="text">
+                <p>{{ post.text|truncatechars:400 }}</p>
+            </div>
+            {% if post.text|length > 400 %}
+            <div class="dots">
+                <div class="text" style="text-align: left;"><a href="{% url 'post_detail' pk=post.pk %}" title="Open Post">&nbsp;•••&nbsp;</a></div>
+            </div>
+            {% endif %}
+            <div class="date">        	
+                <p>Posted by {{ post.author|default_if_none:"Anonymous User"|capfirst}} on {{ post.published_date }}</p>
+            </div>
         </div>
     </div>
-</center>
+</div>
 {% endfor %}
 {% endblock %}

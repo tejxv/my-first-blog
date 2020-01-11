@@ -1,16 +1,17 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-<div class="posts">
-    {% if post.published_date %}<br>
-    <div class="date">Posted on {{ post.published_date }} IST</div>
-    {% endif %}
-    {% if user.is_authenticated %}
-    <div><a href="{% url 'post_edit' pk=post.pk %}" style="text-decoration: none;"><br> <i class="far fa-edit"></i> Edit Post</a></div>
-    {% endif %}
-    <h2>{{ post.title }}</h2>
-    <div class="text"><p>{{ post.text|linebreaksbr }}</p></div>
+<div class="content">
+	<div class="posts">
+    	{% if post.published_date %}<br>
+    	<div class="date">Posted on {{ post.published_date }} IST</div>
+    	{% endif %}
+    	<h2>{{ post.title }}</h2>
+    	<div class="text"><p>{{ post.text|linebreaksbr }}</p></div>
+	</div>
 </div>
+<div class="text-center">
 <div class="gohome"><a href="http://tejxv.pythonanywhere.com/">View All Posts / Go Back</a></div>
+</div>
 <br>
 <br>
 <br>

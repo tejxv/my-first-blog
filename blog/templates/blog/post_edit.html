@@ -1,12 +1,13 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 <head>
 	<title>Post New Update - TheOpenBlog</title>
 </head>
-<br>
-    <div style="font-size: 1rem;">Latest posts will appear on top of the website!</div>
     <div class="posts"><form method="POST" class="token">{% csrf_token %}
-        {{ form.as_p }}
+    	<br>
+        {{ form|crispy }}
+        <div class="date">* Required :P</div>
         <center><button type="submit" class="submit"> POST </button></center>
     </form></div>
     <br>
