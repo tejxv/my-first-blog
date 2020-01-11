@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 {% for post in posts %}
-<div>
+<div class="cposts">
     <div class="blockquote text-center">
         <div class="posts">
         	<div class="text-left">
@@ -17,7 +17,7 @@
             </div>
             {% endif %}
             <div class="date">        	
-                <p>Posted by {{ post.author|default_if_none:"Anonymous User"|capfirst}} on {{ post.published_date }}</p>
+                <p>Posted by <b>{{ post.author|default_if_none:"Anonymous User"|capfirst}}</b> on {{ post.published_date }}</p>
             </div>
         </div>
     </div>

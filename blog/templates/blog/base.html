@@ -64,13 +64,13 @@ a:hover {
 h1 {
     font-family: 'Inter';
     border: 0px solid red;
-    background-color: gold;
+    background-color: yellow;
     margin-top: 50px;
     margin: 0px auto;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-size: 7vw;
+    font-size: calc(7vw + 1vw);
 }
 
 .text-left {
@@ -82,16 +82,16 @@ h1 {
 }
 
 mark {
-    background-color: gold;
+    background-color: yellow;
 }
 
 .credits {
     font-family: 'Inter';
-    background-color: yellow;
+    background-color: #FFFF33;
     border: 0px solid black;
     margin: 0px auto;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: calc(8px + 1vw);
 }
 
 .admin {
@@ -104,11 +104,18 @@ mark {
 
 }
 
+.cposts {
+    margin: 0px auto;
+    padding: 10px 10px;
+    border: 0px solid red;
+}
+
 .posts {
     font-family: 'Inter';
     font-size: 20px;
     padding: 0px 20px;
-    margin: 40px auto;
+    margin: auto;
+    box-sizing: border-box;
     border: 1px solid cyan;
     max-width: 600px;
     border-radius: 5px;
@@ -205,7 +212,7 @@ mark {
     font-family: 'Inter';
     text-align: center;
     border: 0px solid red;
-    font-size: 2rem;
+    font-size: calc(20px + 1vw);
     margin: 5px auto;
     max-width: 100%;
 }
@@ -228,9 +235,10 @@ mark {
 {% if user.is_anonymous %}
 <div class="text-center">
     <a href="/login">LOGIN</a>
-    <b>&nbsp;|&nbsp;</b>
+        <b>&nbsp;|&nbsp;</b>
     <a href="/register">SIGN UP</a>
 </div>
+<br>
 {% elif user.is_authenticated %}
 <div class="text-center">
     <div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Type something as {{request.user|capfirst}} <i class="far fa-plus-square"></i></span></a></div>
