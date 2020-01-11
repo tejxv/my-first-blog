@@ -7,10 +7,21 @@
     {% else %}
     <title>TheOpenBlog</title>
     {% endif %}
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes" name="viewport">
     <script src="https://kit.fontawesome.com/af18556798.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80313533-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-80313533-1');
+    </script>
 </head>
 <style>
 @import url('https://rsms.me/inter/inter.css');
@@ -70,9 +81,10 @@ h1 {
     font-family: 'Fjalla One';
 }
 
-mark{
+mark {
     background-color: gold;
 }
+
 .credits {
     font-family: 'Inter';
     background-color: yellow;
@@ -110,6 +122,7 @@ mark{
         0 36.5px 33.2px rgba(0, 0, 0, 0.093),
         0 100px 91px rgba(0, 0, 0, 0.065);
 }
+
 .dots {
     border: 1px solid cyan;
     border-radius: 5px;
@@ -117,12 +130,14 @@ mark{
     text-decoration: none;
     margin-bottom: 20px;
 }
+
 .dots:hover {
     background-color: gold;
     color: black;
     text-decoration: none;
     border: 1px solid #ab8989;
 }
+
 .text {
     font-size: 1.2rem;
 }
@@ -208,37 +223,37 @@ mark{
     /** WIP **/
 }
 </style>
-
 <h1><b><a href="http://tejxv.pythonanywhere.com/" style="text-decoration: none; color: black;">&nbsp;TheOpenBlog.&nbsp;</a></b></h1>
 <div class="credits">→ Project by&nbsp;<a href="https://www.instagram.com/tejxv/" style="text-decoration: underline;">tejas,</a>&nbsp;<a href="https://www.instagram.com/vats_nipun/" target="_blank" style="text-decoration: underline;">nipun</a>&nbsp;& himanshu, developed using Django & Python.<a href="https://tejxv.pythonanywhere.com/admin/" target="_blank" title="Login" style="text-decoration: none;">&nbsp;<i class="fas fa-cog"></i>&nbsp;</a></div><br>
 {% if user.is_anonymous %}
 <div class="text-center">
-        <a href="/login">LOGIN</a>
-        <b>&nbsp;|&nbsp;</b>
-        <a href="/register">SIGN UP</a>
+    <a href="/login">LOGIN</a>
+    <b>&nbsp;|&nbsp;</b>
+    <a href="/register">SIGN UP</a>
 </div>
 {% elif user.is_authenticated %}
 <div class="text-center">
     <div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Type something as {{request.user|capfirst}} <i class="far fa-plus-square"></i></span></a></div>
     <a href="/logout">LOGOUT</a>
-</div>    
+</div>
 {% endif %}
-
 {% if user.is_authenticated %}
 {% endif %}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 <body>
     {% if messages %}
-        {% for message in messages %}
-        <div class="text-center">
-            <div class="posts">
-                <b>- {{ message }}</b>
-            </div>
+    {% for message in messages %}
+    <div class="text-center">
+        <div class="posts">
+            <b>- {{ message }}</b>
         </div>
-        {% endfor %}
+    </div>
+    {% endfor %}
     {% endif %}
     {% block content %}{% endblock %}
 </body>
+
 </html>
