@@ -1,2 +1,2 @@
 
-Open Blog powered by Django. Live @ http://tejxv.pythonanywhere.com/
+# Open Blog powered by Django. Live @ http://tejxv.pythonanywhere.com/
