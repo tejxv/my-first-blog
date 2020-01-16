@@ -26,10 +26,6 @@
 <style>
 @import url('https://rsms.me/inter/inter.css');
 
-html {
-    font-family: 'Inter', sans-serif;
-}
-
 @supports (font-variation-settings: normal) {
     html {
         font-family: 'Inter var', sans-serif;
@@ -72,7 +68,13 @@ h1 {
     padding-bottom: 20px;
     font-size: calc(7vw + 1vw);
 }
-
+p{
+    font-family: 'Inter';
+    font-size: 1.1rem;
+}
+p a {
+    border-bottom: 2px solid gold;
+}
 .text-left {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -129,8 +131,11 @@ mark {
         0 17.7px 16.1px rgba(0, 0, 0, 0.117),
         0 36.5px 33.2px rgba(0, 0, 0, 0.093),
         0 100px 91px rgba(0, 0, 0, 0.065);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-
+.posts:hover {
+    box-shadow: 0 2px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23);
+}
 .dots {
     border: 1px solid cyan;
     border-radius: 5px;
@@ -155,24 +160,6 @@ mark {
     font-size: 1rem;
 }
 
-.submit {
-    border: 2px solid blue;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    color: blue;
-    padding: 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 2rem;
-    width: 200px;
-    -webkit-transition-duration: 0.4s;
-    /* Safari */
-    transition-duration: 0.2s;
-    cursor: pointer;
-
-}
-
 .forms {
     font-family: 'Inter';
     font-size: 20px;
@@ -191,6 +178,22 @@ mark {
         0 17.7px 16.1px rgba(0, 0, 0, 0.117),
         0 36.5px 33.2px rgba(0, 0, 0, 0.093),
         0 100px 91px rgba(0, 0, 0, 0.065);
+}
+.submit {
+    border: 2px solid blue;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: blue;
+    padding: 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2rem;
+    width: 200px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.2s;
+    cursor: pointer;
+
 }
 
 .submit:hover {
@@ -221,32 +224,81 @@ mark {
 .compose:hover {
     color: blue;
 }
+.cbtn {
+    max-width: 600px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border: 0px solid red;
 
-.gohome {
-    font-size: 1.2rem;
 }
+.gohome {
+    font-family: "Fjalla One";
+    border: none;
+    background-color: transparent;
+    display: block;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.gohome:active {
+    border: none;
+}
+.nb {
+    border: 0px solid red;
+    background-color: ;
+    transition: all 0.3s;
 
+}
+.nb:hover{
+    background-color: orange;
+    border-radius: 3px;
+    color: black;
+    cursor: pointer;
+}
+.nb:active {
+    background-color: yellow;
+}
+nav {
+    text-align: center;
+    border: 0px solid black;
+    border-bottom: 1px solid goldenrod;
+    background-color: gold;
+
+}
+nav a {
+    font-family: "Fjalla One";
+    text-align: center;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.6rem;
+}
 
 @media (max-width: 400px) {
     /** WIP **/
 }
 </style>
-<h1><b><a href="http://tejxv.pythonanywhere.com/" style="text-decoration: none; color: black;">&nbsp;TheOpenBlog.&nbsp;</a></b></h1>
-<div class="credits">→ Project by&nbsp;<a href="https://www.instagram.com/tejxv/" style="text-decoration: underline;">tejas,</a>&nbsp;<a href="https://www.instagram.com/vats_nipun/" target="_blank" style="text-decoration: underline;">nipun</a>&nbsp;& himanshu, developed using Django & Python.<a href="https://tejxv.pythonanywhere.com/admin/" target="_blank" title="Login" style="text-decoration: none;">&nbsp;<i class="fas fa-cog"></i>&nbsp;</a></div><br>
+<h1><b><a href="/" style="text-decoration: none; color: black;">&nbsp;TheOpenBlog.&nbsp;</a></b></h1>
+<div class="credits"><div class="date">→ Project by&nbsp;<a href="https://www.instagram.com/tejxv/" target="_blank" style="text-decoration: underline;">tejas,</a>&nbsp;<a href="https://www.instagram.com/vats_nipun/" target="_blank" style="text-decoration: underline;">nipun</a>&nbsp;& himanshu, developed using Django & Python.<a href="/admin" target="_blank" title="For Admins :P" style="text-decoration: none;">&nbsp;<i class="fas fa-cog"></i>&nbsp;</a></div></div>
+<nav>
+    <a href="/" class="nb">HOME</a>
+    {% if user.is_anonymous %}
+    <a href="/login" class="nb">LOGIN</a>
+    <a href="/register" class="nb">SIGN UP</a>
+    {% elif user.is_authenticated %}
+    <a href="/logout" class="nb">LOGOUT</a>
+    {% endif %}
+</nav>
 {% if user.is_anonymous %}
-<div class="text-center">
-    <a href="/login">LOGIN</a>
-        <b>&nbsp;|&nbsp;</b>
-    <a href="/register">SIGN UP</a>
-</div>
-<br>
-{% elif user.is_authenticated %}
-<div class="text-center">
-    <div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Type something as {{request.user|capfirst}} <i class="far fa-plus-square"></i></span></a></div>
-    <a href="/logout">LOGOUT</a>
-</div>
+<div class="text-center"><br><p><a href="https://www.google.com/search?q=django">Django</a> powered blog type thing that lets you post whatever you want<br><a href="/register">Create an account</a> to get started.</p>
+</div>  
 {% endif %}
 {% if user.is_authenticated %}
+<div class="text-center">
+    <div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Type something as {{request.user|capfirst}} <i class="far fa-plus-square"></i></span></a></div>
+</div>
 {% endif %}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -257,12 +309,16 @@ mark {
     {% for message in messages %}
     <div class="text-center">
         <div class="posts">
-            <b>- {{ message }}</b>
+            <i>- {{ message }}</i>
         </div>
     </div>
     {% endfor %}
     {% endif %}
     {% block content %}{% endblock %}
+    <br>
+    <br>
+    <br>
+    <br>
 </body>
 
 </html>

@@ -10,10 +10,10 @@ def register(request):
 			print('done')
 			form.save()
 			username = form.cleaned_data.get('username')
-			messages.success(request, f'Account Successfully Created, { username }!')
+			messages.success(request, f'user { username } successfully created! now you can login using the login button above')
 			return redirect('/')
 		else:
-		    messages.warning(request, f'Please enter valid credentials!')	
+		    messages.warning(request, f'Please enter valid details!')	
 	form = UserRegisterForm()
 	print('falled back')
 	return render(request, 'users/register.html', {'form': form})
