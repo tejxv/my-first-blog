@@ -4,11 +4,10 @@ from .forms import UserRegisterForm
 
 def register(request):
 	if request.method =='POST':
-		print('method is post')
 		form = UserRegisterForm(request.POST)
 		if form.is_valid():
 			print('done')
-			form.save()
+			form.save(commit=False)
 			username = form.cleaned_data.get('username')
 			messages.success(request, f'user { username } successfully created! now you can login using the login button above')
 			return redirect('/')

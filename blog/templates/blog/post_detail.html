@@ -7,9 +7,8 @@
 	<div class="content">
 		<div class="posts">
 			<br>
-	    	{% if post.published_date %}
-	    	{% endif %}
-	    	<h2><mark>{{ post.title }}</mark></h2>
+	    	<h2><mark>{{ post.title|upper }}</mark></h2>
+	    	<br>
 	    	<div class="text"><p>{{ post.text|linebreaksbr }}</p></div>
 	    	<div class="date">Posted on {{ post.published_date }}</div>
 	    	<br>
