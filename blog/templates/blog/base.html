@@ -45,12 +45,12 @@ body {
 
 
 body {
-    background: linear-gradient(to top, #fdfd98, #e6e6fa, #c8c8cc, #ffff91);
+    background: linear-gradient(to top, #fdfd98, #e6e6fa, #c8c8cc, #fdfd98, #e6e6fa, #c8c8cc, #ffff91);
     background-size: 600% 600%;
     backdrop-filter: ;
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
 
 }
 
@@ -95,7 +95,9 @@ body {
         background-position: 51% 0%
     }
 }
-
+.asteriskField {
+    display: none;
+}
 
 a {
     font-family: 'Inter';
@@ -224,7 +226,7 @@ mark {
     font-size: 20px;
     padding: 0px 40px;
     padding-bottom: 40px;
-    margin: 40px auto;
+    margin: 0px auto;
     border: 1px solid cyan;
     max-width: 600px;
     border-radius: 5px;
@@ -351,6 +353,10 @@ nav a {
     font-size: 1.6rem;
 }
 
+#hint_id_password1 {
+    display: none;
+}
+
 @media (max-width: 400px) {
     /** WIP **/
 }
@@ -394,7 +400,8 @@ nav a {
     </div>
     {% endfor %}
     {% endif %}
-    {% block content %}{% endblock %}
+            {% block content %}
+            {% endblock %}        
     <br>
     <br>
     <br>
