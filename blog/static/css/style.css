@@ -1,0 +1,386 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url(https://cdn.shopify.com/s/files/1/2642/6578/t/18/assets/MonumentExtended-Ultrabold.woff) format('woff');
+    font-weight: bold;
+}
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0px;
+    height: 100%;
+    width: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+body {
+    background: black;
+}
+.asteriskField {
+    display: none;
+}
+a {
+    font-family: 'Neue Montreal';
+    text-decoration: none;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+a:hover {
+    color: #ab8989;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: Neue Montreal;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 5vw;
+    line-height: 58px;
+    color: white;
+    text-align: center;
+    background: ;
+    backdrop-filter: blur(30px) contrast(90%);
+    padding: 20px;
+}
+h2 {
+    margin-top: 20px;
+    font-family: Neue Montreal;
+    letter-spacing: 2px;
+    font-style: normal;
+    font-weight: 900;
+    color: #F34444; 
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+p {
+    font-family: 'Inter';
+    font-size: 1.1rem;
+    color: white;
+}
+
+p a {
+    border-bottom: 0px solid gold;
+    font-family: 'Inter';
+    font-weight: 900;
+    color: #5c5c5c;
+}
+
+.date p {
+    color: #5C5C5C;
+}
+b {
+    color: #F34444
+}
+.text-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #F34444;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    font-size: 1.5rem;
+    font-family: 'Fjalla One';
+
+}
+
+.post_title {
+    width: 700px;
+    color: #F34444;
+    font-family: 'Neue Montreal';
+    font-weight: 900;
+    font-size: 40px;
+    letter-spacing: 5px;
+    display: inline-block;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.post_no {
+    text-align: right;
+    padding-right:20px; 
+    width: 250px;
+    height: 100px
+    text-align: left;
+    font-family: 'Neue Montreal';
+    overflow: hidden;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 2;
+    letter-spacing: 4px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F34444;
+    -webkit-text-fill-color: transparent;
+}
+
+.greetings-banner {
+    font-family: 'Neue Montreal';
+    font-size: 20px;
+    line-height: px;
+    padding: 10px 0px;
+    margin: auto;
+    max-width: 1000px;
+    text-align: left;
+    background-color: black;
+}
+
+.admin {
+    max-width: 700px;
+    text-align: left;
+    border: 0px solid black;
+    margin: 0px auto;
+    font-size: 20px;
+    padding-top: 20px;
+
+}
+
+.cposts {
+    margin: 0px auto;
+    padding: 10px 10px;
+    border: 0px solid red;
+}
+
+.posts {
+    font-family: 'Neue Montreal';
+    font-size: 20px;
+    padding: 0px 0px;
+    margin: auto;
+    border: 3px solid #F34444;
+    max-width: 1000px;
+    text-align: left;
+    background-color: black;
+}
+
+.read-more {
+    display: table;
+    width: 100%;
+    height: 50px;
+    vertical-align: middle;
+    padding: 20px 20px;
+    letter-spacing: 2px;
+    border: 0px solid transparent;
+    margin: 10px 0px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.read-more a {
+     font-family: 'Inter';
+     font-weight: bold;
+     color: white;
+}
+.read-more:hover {
+    background-color: #F34444;
+    color: black;
+    text-decoration: none;
+}
+
+.text {
+    
+    font-size: 1.2rem;
+    padding: 20px 20px;
+    display: table;
+    width: 100%;
+    vertical-align: middle;
+
+}
+
+.date {
+    font-size: 1rem;
+    padding-left: 20px;
+}
+.upper-case_time {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Inter';
+    letter-spacing: 1px;
+    color: #5C5C5C;
+}
+.forms {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 0px;
+    font-weight: bold;
+    padding: 0px 40px;
+    padding-bottom: 40px;
+    margin: 0px auto;
+    border: 3px solid #F34444;
+    max-width: 600px;
+    text-align: left;
+    background-color: black;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+    font-family: 'Inter';
+    font-size: 20px;
+    letter-spacing: 1px;
+    background-color: black;
+    background-clip: padding-box;
+    border: 3px solid #F34444;
+    border-radius: 5px;
+    transition: border-color .5s ease-in-out,box-shadow .5s ease-in-out;
+}
+.new_acc_greeting {
+    font-family: 'Inter';
+    font-size: 30px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.form-control:focus {
+    color: white;
+    background-color: black;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .3rem rgba(0,123,255,.25);
+}
+.token {
+    padding: 20px 40px;
+}
+label {
+    text-transform: uppercase;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.submit {
+    border: 3px solid #F34444;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: bold;
+    background-color: black;
+    display: inline-block;
+    font-size: 2rem;
+    width: 200px;
+    transition: all 400ms cubic-bezier(0.83, 0, 0.17, 1);
+
+}
+
+.submit:hover {
+    background-color: #F34444;
+    color: black;
+    letter-spacing: 4px;
+}
+
+.border-bottom h2 {
+    padding: 0;
+}
+.text-muted {
+    display: none;
+}
+.compose {
+    text-align: center;
+    border-top: 2px solid hotpink;
+    border-bottom: 2px solid hotpink;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: calc(20px + .8vw);
+    word-wrap: normal;
+    margin: 20px auto;
+    max-width: 100%;
+}
+.compose a {
+    font-family: 'Inter';
+}
+
+
+.cbtn {
+    max-width: 600px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border: 0px solid red;
+
+}
+
+.gohome {
+    font-family: "Fjalla One";
+    border: none;
+    background-color: transparent;
+    display: block;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.gohome:active {
+    border: none;
+}
+
+.logout-btn  {
+    color: black;
+    font-family: 'Inter';
+    font-weight: bold;
+    border: 3px solid #F34444;
+    background-color: #F34444;
+    height: 30px;
+    width: 30px;
+    transition: all 400ms cubic-bezier(0.83, 0, 0.17, 1);
+    overflow: hidden;
+}
+.logout-btn:hover  {
+    color: black;
+    letter-spacing: 10px;
+}
+nav {
+    text-align: right;
+    background: #1B1717;
+    margin-top: 100px;
+    color: #F34444;
+}
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+nav a {
+    font-family: "Fjalla One";
+    text-align: center;
+    color: #F34444;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.6rem;
+}
+
+#hint_id_password1 {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    /** WIP **/
+}

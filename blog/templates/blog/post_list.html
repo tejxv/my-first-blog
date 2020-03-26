@@ -2,23 +2,25 @@
 {% block content %}
 {% for post in posts %}
 
+
 <div class="cposts">
     <div class="blockquote text-center">
-        <div class="posts" onclick="location.href='{% url 'post_detail' pk=post.pk %}';" style="cursor: pointer;">
-        	<div class="text-left">
-            <mark><b>&nbsp;<a href="{% url 'post_detail' pk=post.pk %}" title="Open Post">{{ post.title|upper }}</a>&nbsp;
-            </b></mark>
-            </div>
-            <div class="text">
-                <p>{{ post.text|truncatechars:200|linebreaksbr }}</p>
-            </div>
-            {% if post.text|length > 200 %}
-            <div class="dots">
-                <div class="text" style="text-align: left;"><a href="{% url 'post_detail' pk=post.pk %}" title="Open Post">&nbsp;•••&nbsp;</a></div>
-            </div>
-            {% endif %}
-            <div class="date">        	
-                <p>Posted by <b>{{ post.author|default_if_none:"Anonymous User"}}</b> on {{ post.published_date }}</p>
+        <div class="posts">
+            <div class="left-padding">
+            	<div class="text-left" onclick="location.href='{% url 'post_detail' pk=post.pk %}';" style="cursor: pointer;">
+                    <div class="post_title">{{ post.title|upper }}</div><div class="post_no">#{{ post.pk }}</div>
+                </div>
+                <div class="text">
+                    <p>{{ post.text|truncatechars:200|linebreaksbr }}</p>
+                </div>
+                {% if post.text|length > 200 %}
+                <div class="read-more" onclick="location.href='{% url 'post_detail' pk=post.pk %}';" style="cursor: pointer;">
+                    <a href="{% url 'post_detail' pk=post.pk %}" title="Open Post"><i>Read more...</i></a>
+                </div>
+                {% endif %}
+                <div class="date">        	
+                    <p><b> — {{ post.author|default_if_none:"Anonymous User"}}</b><div class="upper-case_time">{{ post.published_date }}</div></p>
+                </div>
             </div>
         </div>
     </div>

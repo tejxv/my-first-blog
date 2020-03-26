@@ -7,21 +7,14 @@
 	    <form method="POST">
 	        {% csrf_token %}
 	        <div class="border-bottom">
-	        	<h2><br>Sign Up for a new account</h2>
+	        	<h2><br>Sign Up</h2>
 	        </div>
+	        <br>
 	        <fieldset class="form-group">
-	        	<br>
 	            {{ form|crispy }}
 	        </fieldset>
 	        <div>
 	            <button type="submit" class="submit">SIGN UP</button>
-	            <div class="date">
-	                <div class="border-top mb">
-	                    <small>
-	                        Already Have An Account?<a href="{% url 'login' %}" class="ml-2">Login</a>
-	                    </small>
-	                </div>
-	            </div>
 	        </div>
 	    </form>
 	</div>

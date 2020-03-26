@@ -1,21 +1,23 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+
 <div class="cposts">
-	<div class="text-center">
-		<div class="cbtn"><button class="gohome" onclick="window.history.go(-1)">&#8249; Go Back&nbsp;</button></div>
-	</div>
-	<div class="content">
-		<div class="posts">
-			<br>
-	    	<h2><mark>{{ post.title|upper }}</mark></h2>
-	    	<br>
-	    	<div class="text"><p>{{ post.text|linebreaksbr }}</p></div>
-	    	<div class="date">Posted on {{ post.published_date }}</div>
-	    	<br>
-		</div>
-	</div>
+    <div class="blockquote text-center">
+        <div class="posts">
+            <div class="left-padding">
+            	<div class="text-left">
+                    <div class="post_title">{{ post.title }}
+                    </div>
+                </div>
+                <div class="text">
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+                <div class="date">        	
+                    <p><b> — {{ post.author|default_if_none:"Anonymous User"}}</b><div class="upper-case_time">{{ post.published_date }}</div></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<br>
-<br>
-<br>
+
 {% endblock %}

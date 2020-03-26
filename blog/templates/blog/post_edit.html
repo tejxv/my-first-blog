@@ -2,13 +2,10 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="cposts">
-    <div class="posts"><form method="POST" class="token">{% csrf_token %}
+    <div class="posts"><form method="POST" class="token" autocomplete="off">{% csrf_token %}
     	<br>
         {{ form|crispy }}
-        <div class="date">* Required :P</div>
-        <center><button type="submit" class="submit"> POST </button></center>
+        <center><button type="submit" class="submit">POST</button></center>
     </form></div>
     </div>
-    <br>
-    <br>	
 {% endblock %}

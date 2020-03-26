@@ -9,13 +9,3 @@ class UserRegisterForm(UserCreationForm):
 	class Meta:
 		model = User
 		fields = ['username','email','password1','password2']
-		labels = {
-        'password1':_('Alphanumeric'),
-        }
-
-		help_texts = {
-            'username': None,
-            'email': None,
-            'password2': _('Alphanumeric'),
-        }
-        

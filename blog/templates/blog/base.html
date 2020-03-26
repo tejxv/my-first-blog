@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html>
 
 <head>
@@ -7,11 +8,12 @@
     {% else %}
     <title>TheOpenBlog</title>
     {% endif %}
+
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes" name="viewport">
-    <script src="https://kit.fontawesome.com/af18556798.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80313533-1"></script>
     <script>
@@ -22,361 +24,26 @@
 
     gtag('config', 'UA-80313533-1');
     </script>
+
 </head>
-<style>
-@import url('https://rsms.me/inter/inter.css');
-
-@supports (font-variation-settings: normal) {
-    html {
-        font-family: 'Inter var', sans-serif;
-    }
-}
-
-html {
-    text-align: center;
-}
-
-html,
-body {
-    margin: 0px;
-    height: 100%;
-    width: auto;
-}
-
-
-body {
-    background: linear-gradient(to top, #fdfd98, #e6e6fa, #c8c8cc, #fdfd98, #e6e6fa, #c8c8cc, #ffff91);
-    background-size: 600% 600%;
-    backdrop-filter: ;
-    -webkit-animation: AnimationName 15s ease infinite;
-    -moz-animation: AnimationName 15s ease infinite;
-    animation: AnimationName 15s ease infinite;
-
-}
-
-@-webkit-keyframes AnimationName {
-    0% {
-        background-position: 51% 0%
-    }
-
-    50% {
-        background-position: 50% 100%
-    }
-
-    100% {
-        background-position: 51% 0%
-    }
-}
-
-@-moz-keyframes AnimationName {
-    0% {
-        background-position: 51% 0%
-    }
-
-    50% {
-        background-position: 50% 100%
-    }
-
-    100% {
-        background-position: 51% 0%
-    }
-}
-
-@keyframes AnimationName {
-    0% {
-        background-position: 51% 0%
-    }
-
-    50% {
-        background-position: 50% 100%
-    }
-
-    100% {
-        background-position: 51% 0%
-    }
-}
-.asteriskField {
-    display: none;
-}
-
-a {
-    font-family: 'Inter';
-    text-decoration: none;
-    color: black;
-    transition: all .2s ease-in-out;
-}
-
-a:hover {
-    color: #ab8989;
-    text-decoration: none;
-}
-
-h1 {
-    font-family: 'Inter';
-    border: 0px solid red;
-    background-color: gold;
-    margin-top: 50px;
-    margin: 0px auto;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: calc(7vw + 1vw);
-}
-
-p {
-    font-family: 'Inter';
-    font-size: 1.1rem;
-}
-
-p a {
-    border-bottom: 2px solid gold;
-}
-
-.text-left {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: 0px solid red;
-    font-size: 1.5rem;
-    font-family: 'Fjalla One';
-}
-
-mark {
-    background-color: gold;
-    border-bottom: 2px solid black;
-    border-radius: 5px;
-}
-
-.credits {
-    font-family: 'Inter';
-    background-color: yellow;
-    border-top: 1px solid goldenrod;
-    border-bottom: 1px solid goldenrod;
-    margin: 0px auto;
-    text-align: center;
-    font-size: calc(8px + 1vw);
-}
-
-.admin {
-    max-width: 700px;
-    text-align: left;
-    border: 0px solid black;
-    margin: 0px auto;
-    font-size: 20px;
-    padding-top: 20px;
-
-}
-
-.cposts {
-    margin: 0px auto;
-    padding: 10px 10px;
-    border: 0px solid red;
-}
-
-.posts {
-    font-family: 'Inter';
-    font-size: 20px;
-    padding: 0px 20px;
-    margin: auto;
-    box-sizing: border-box;
-    border: 1px solid cyan;
-    max-width: 600px;
-    border-radius: 5px;
-    text-align: left;
-    background-color: ghostwhite;
-    overflow: auto;
-    box-shadow:
-        0 3.4px 3.1px rgba(0, 0, 0, 0.21),
-        0 8.7px 7.9px rgba(0, 0, 0, 0.145),
-        0 17.7px 16.1px rgba(0, 0, 0, 0.117),
-        0 36.5px 33.2px rgba(0, 0, 0, 0.093),
-        0 100px 91px rgba(0, 0, 0, 0.065);
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-}
-
-.posts:hover {
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.23);
-}
-
-.dots {
-    border: 1px solid cyan;
-    border-radius: 5px;
-    display: inline-block;
-    text-decoration: none;
-    margin-bottom: 20px;
-}
-
-.dots:hover {
-    background-color: gold;
-    color: black;
-    text-decoration: none;
-    border: 1px solid #ab8989;
-}
-
-.text {
-    font-size: 1.2rem;
-}
-
-.date {
-    color: grey;
-    font-size: 1rem;
-}
-
-.forms {
-    font-family: 'Inter';
-    font-size: 20px;
-    padding: 0px 40px;
-    padding-bottom: 40px;
-    margin: 0px auto;
-    border: 1px solid cyan;
-    max-width: 600px;
-    border-radius: 5px;
-    text-align: left;
-    background-color: ghostwhite;
-    overflow: auto;
-    box-shadow:
-        0 3.4px 3.1px rgba(0, 0, 0, 0.21),
-        0 8.7px 7.9px rgba(0, 0, 0, 0.145),
-        0 17.7px 16.1px rgba(0, 0, 0, 0.117),
-        0 36.5px 33.2px rgba(0, 0, 0, 0.093),
-        0 100px 91px rgba(0, 0, 0, 0.065);
-}
-
-.submit {
-    border: 2px solid blue;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    color: blue;
-    padding: 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 2rem;
-    width: 200px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.2s;
-    cursor: pointer;
-
-}
-
-.submit:hover {
-    background-color: gold;
-    color: black;
-    border: 2px solid gold;
-    box-shadow:
-        0 3.4px 3.1px rgba(0, 0, 0, 0.21),
-        0 8.7px 7.9px rgba(0, 0, 0, 0.145),
-        0 17.7px 16.1px rgba(0, 0, 0, 0.117),
-        0 36.5px 33.2px rgba(0, 0, 0, 0.093),
-        0 100px 91px rgba(0, 0, 0, 0.065);
-}
-
-.submit:active {
-    border: 2px solid black;
-}
-
-.compose {
-    font-family: 'Inter';
-    text-align: center;
-    border-top: 2px solid hotpink;
-    border-bottom: 2px solid hotpink;
-    border-radius: 5px;
-    background-image: ;
-    display: inline-block;
-    padding: 0px 10px;
-    font-size: calc(20px + .8vw);
-    word-wrap: normal;
-    margin: 20px auto;
-    max-width: 100%;
-}
-
-.compose:hover {
-    background-image: url();
-
-}
-
-.cbtn {
-    max-width: 600px;
-    margin-bottom: 10px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    border: 0px solid red;
-
-}
-
-.gohome {
-    font-family: "Fjalla One";
-    border: none;
-    background-color: transparent;
-    display: block;
-    padding: 10px 0px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.gohome:active {
-    border: none;
-}
-
-.nb {
-    border: 0px solid red;
-    background-color: ;
-    transition: all 0.3s;
-
-}
-
-.nb:hover {
-    background-color: yellow;
-    border-radius: 3px;
-    color: black;
-    cursor: pointer;
-}
-
-.nb:active {
-    background-color: orange;
-}
-
-nav {
-    text-align: center;
-    border: 0px solid black;
-    border-bottom: 1px solid goldenrod;
-    background-color: gold;
-
-}
-
-nav a {
-    font-family: "Fjalla One";
-    text-align: center;
-    color: black;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 1.6rem;
-}
-
-#hint_id_password1 {
-    display: none;
-}
-
-@media (max-width: 400px) {
-    /** WIP **/
-}
-</style>
-<h1><b><a href="/" style="text-decoration: none; color: black;">&nbsp;TheOpenBlog.&nbsp;</a></b></h1>
-<div class="credits">
-    <div class="date">→ Project by&nbsp;<a href="https://www.instagram.com/tejxv/" target="_blank" style="text-decoration: underline;">tejas,</a>&nbsp;<a href="https://www.instagram.com/vats_nipun/" target="_blank" style="text-decoration: underline;">nipun</a>&nbsp;& <a href="https://www.snapchat.com/add/rajput.himansh" target="_blank" style="text-decoration: underline;">himanshu</a>, developed using Django & Python<a href="/admin" target="_blank" title="For Admins :P" style="text-decoration: none;">&nbsp;<i class="fas fa-cog"></i>&nbsp;</a></div>
+<div class="top-nav">
+    <h1><b><a href="/" style="text-decoration: none;">&nbsp;THE OPEN BLOG.&nbsp;</a></b></h1>
 </div>
 <nav>
-    <a href="/" class="nb">HOME</a>
-    {% if user.is_anonymous %}
-    <a href="/login" class="nb">LOGIN</a>
-    <a href="/register" class="nb">SIGN UP</a>
-    {% elif user.is_authenticated %}
-    <a href="/logout" class="nb">LOGOUT</a>
+    {% if user.is_authenticated %}
+    <a href="/logout" class="logout-btn">LOGOUT <img src="https://image.flaticon.com/icons/svg/2089/2089791.svg" height="30px" width='30px' alt="LOGOUT"></a>
     {% endif %}
 </nav>
+
 {% if user.is_anonymous %}
-<div class="text-center"><br>
-    <p><a href="https://www.google.com/search?q=django">Django</a> powered blog type thing that lets you post whatever you want<br><a href="/register">Create an account</a> to get started.</p>
+<div class="cposts">
+    <div class="greetings-banner">
+
+        <h2><a href="/login">LOGIN</a> / <a href="/register">CREATE</a> ACCOUNT</h2>
+            <div class="text"><p>The Open Blog exists to convey shit that nobody cares about.<br><a href="https://github.com/tejxv/" target="_blank">GET SOURCE CODE</a></p>
+            </div>
+
+    </div>
 </div>
 {% endif %}
 {% if user.is_authenticated %}
@@ -386,6 +53,7 @@ nav a {
     </div>
 </div>
 {% endif %}
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -394,17 +62,16 @@ nav a {
     {% if messages %}
     {% for message in messages %}
     <div class="text-center">
-        <div class="posts">
-            <i>- {{ message }}</i>
+        <div class="cposts">
+            <div>
+                Welcome to the open blog, <i>{{ message }}!</i>
+            </div>
         </div>
     </div>
     {% endfor %}
     {% endif %}
-            {% block content %}
-            {% endblock %}        
-    <br>
-    <br>
-    <br>
+    {% block content %}
+    {% endblock %}
     <br>
 </body>
 
