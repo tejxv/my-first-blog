@@ -11,15 +11,16 @@
                     <div class="post_title">{{ post.title|upper }}</div><div class="post_no">#{{ post.pk }}</div>
                 </div>
                 <div class="text">
-                    <p>{{ post.text|truncatechars:200|linebreaksbr }}</p>
+                    <p>{{ post.text|truncatechars:200|linebreaksbr|urlize }}</p>
                 </div>
                 {% if post.text|length > 200 %}
                 <div class="read-more" onclick="location.href='{% url 'post_detail' pk=post.pk %}';" style="cursor: pointer;">
-                    <a href="{% url 'post_detail' pk=post.pk %}" title="Open Post"><i>Read more...</i></a>
+                    <a href="{% url 'post_detail' pk=post.pk %}" title="Open Post"><i>Read remaining {{ post.text|wordcount }} words...</i></a>
                 </div>
                 {% endif %}
                 <div class="date">        	
-                    <p><b> — {{ post.author|default_if_none:"Anonymous User"}}</b><div class="upper-case_time">{{ post.published_date }}</div></p>
+                    <p><b> — {{ post.author|default_if_none:"Anonymous User"}}</b><div class="time">{{ post.published_date|date:"j F Y @ h:i A" }}
+                    ({{ post.published_date|timesince }} ago)</div></p>
                 </div>
             </div>
         </div>

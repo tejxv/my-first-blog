@@ -5,18 +5,17 @@
     <div class="blockquote text-center">
         <div class="posts">
             <div class="left-padding">
-            	<div class="text-left">
+                <div class="text-left">
                     <div class="post_title">{{ post.title }}
                     </div>
                 </div>
-
-                    {% if post.author == user %}
+                    <form method="POST">{% csrf_token %}
                     <div class="delete-popup">
-                        <p><a class="btn btn-outline-danger" href="{% url 'post_delete' pk=post.pk %}">Delete Post</a>
-                        <a class="btn btn-outline-secondary" href="{% url 'post_edit' pk=post.pk %}">Edit</a></p>
+                        <p> Are you sure?</p>
+                        <p><button class="btn btn-outline-danger" type="submit">DELETE POST</button>
+                        <a class="btn btn-outline-secondary" href="{% url 'post_detail' pk=post.pk %}">Cancel</a></p>
                     </div>
-                    {% endif %}
-                    
+                    </form>
                 <div class="text">
                     <p>{{ post.text|linebreaksbr|urlize }}</p>
                 </div>

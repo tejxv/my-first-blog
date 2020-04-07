@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>hi</title>
+    <script src="https://kit.fontawesome.com/af18556798.js" crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-80313533-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-80313533-1');
+</script> -->
+</head>
+<style>
+    @import url('https://rsms.me/inter/inter.css');
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+div {
+	border: 0px solid red;
+	margin: 0;
+}
+.container {
+	border: 10px solid black;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	transition: all 400ms cubic-bezier(.5,1.64,.41,.7);
+}
+.container:hover {
+	border: 100px solid black;
+}
+.text-overlay {
+	display: flex;
+	flex-direction: column;
+	border: 0px solid white;
+	width: auto;
+	height: auto;
+	top: 0;
+	left: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	font-size: 5vh;
+	color: #fff;
+	mix-blend-mode: exclusion;
+	cursor: default;
+}
+.keep-left {
+	display: flex;
+	flex-direction: column;
+}
+.seperator {
+	border: 0px solid red;
+	width: 100%;
+	margin: 10px 10px 10px 0px;
+}
+.socials {
+	text-align: left;
+	border-left: 10px solid red;
+	padding: 20px;
+	border-radius: 00px;
+	word-spacing: 40px;
+	cursor: default;
+}
+.iframediv {
+	margin-top: 10px;
+	opacity: .3;
+	mix-blend-mode: exclusion;
+	transition: all .5s ease-in;
+}
+.iframediv:hover {
+	opacity: 1;
+}
+h1 {
+	font-size: 7vw + 20px;
+	text-shadow: 5px 0px red;
+}
+p:hover {
+	color: red;
+	text-shadow: 2px 0px white;
+	transition: all 400ms cubic-bezier(.5,1.64,.41,.7);
+}
+a {
+	color: white;
+	transition: all .2s ease;
+}
+a:hover {
+	color: red;
+	cursor: none;
+}
+video {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	position: fixed;
+	z-index: -1;
+}
+</style>
+
+<body>
+    <div class="container">
+        <video class="vid-insert bg-black" id="ocean" autoplay="" muted="" loop="" playsinline poster="https://media.urbit.org/site/sea30-poster.jpg">
+            <source src="https://storage.googleapis.com/media.urbit.org/site/sea30-1440.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="text-overlay">
+            <div class="keep-left">
+                <h1>tejas.</h1>
+                <p><i>amateur internet ninja</i></p>
+                <div class="seperato"></div>
+	                <div class="socials">
+	                    <a href="https://github.com/tejxv/" target="_blank"><i class="fab fa-github"></i></a>
+	                    <a href="https://snapchat.com/add/lltejasll" target="_blank"><i class="fab fa-snapchat-ghost"></i></a></i>
+	                    <a href="https://twitter.com/tejxv" target="_blank"><i class="fab fa-twitter"></i></a>
+	                    <a href="https://open.spotify.com/user/guywithaniphone5s" target="_blank"><i class="fab fa-spotify"></i></a>
+	                    <a href="https://www.instagram.com/tejxv/" target="_blank"><i class="fab fa-instagram"></i></a>
+	                </div>
+            </div>
+            <div class="iframediv">
+                <iframe src="https://open.spotify.com/embed/playlist/7f4fqYCAARWeehIuV3ZKgF" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> </div>
+        </div>
+</body>
+
+</html>

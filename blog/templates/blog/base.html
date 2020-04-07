@@ -11,10 +11,10 @@
 
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes" name="viewport">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    
+    <!-- Global site tag (gtag.js) - Google Analytics 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80313533-1"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -24,7 +24,7 @@
 
     gtag('config', 'UA-80313533-1');
     </script>
-
+-->
 </head>
 <div class="top-nav">
     <h1><b><a href="/" style="text-decoration: none;">&nbsp;THE OPEN BLOG.&nbsp;</a></b></h1>
@@ -40,7 +40,7 @@
     <div class="greetings-banner">
 
         <h2><a href="/login">LOGIN</a> / <a href="/register">CREATE</a> ACCOUNT</h2>
-            <div class="text"><p>The Open Blog exists to convey shit that nobody cares about.<br><a href="https://github.com/tejxv/" target="_blank">GET SOURCE CODE</a></p>
+            <div class="text"><p>The Open Blog exists to convey shit that nobody cares about.<br><a href="https://github.com/tejxv/" target="_blank">— tejas</a></p>
             </div>
 
     </div>
@@ -49,7 +49,7 @@
 {% if user.is_authenticated %}
 <div class="cposts">
     <div class="text-center">
-        <div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Type something as <b>{{request.user|capfirst}}</b> <i class="far fa-plus-square"></i></span></a></div>
+        <div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Type something as <b>{{request.user}}</b></a></div>
     </div>
 </div>
 {% endif %}
@@ -59,20 +59,20 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <body>
+    {{ message }}
     {% if messages %}
     {% for message in messages %}
+
     <div class="text-center">
-        <div class="cposts">
-            <div>
-                Welcome to the open blog, <i>{{ message }}!</i>
-            </div>
-        </div>
+            <div class="new_user_banner">
+                Welcome to the open blog, <i>{{ message }}!</i><br>now you can Login!
+            </div>    
     </div>
+   
     {% endfor %}
     {% endif %}
     {% block content %}
     {% endblock %}
-    <br>
 </body>
 
 </html>

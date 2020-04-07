@@ -42,16 +42,16 @@ a:hover {
 }
 
 h1 {
-    font-family: Neue Montreal;
+    font-family: 'Neue Montreal';
     font-style: normal;
     font-weight: 900;
     font-size: 5vw;
     line-height: 58px;
     color: white;
     text-align: center;
-    background: ;
     backdrop-filter: blur(30px) contrast(90%);
-    padding: 20px;
+    -webkit-backdrop-filter: blur(30px) contrast(90%);
+    padding: 10px;
 }
 h2 {
     margin-top: 20px;
@@ -76,7 +76,27 @@ p a {
     font-weight: 900;
     color: #5c5c5c;
 }
-
+nav {
+    text-align: right;
+    background: #1B1717;
+    margin-top: 80px;
+    color: #F34444;
+}
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+nav a {
+    font-family: "Fjalla One";
+    text-align: center;
+    color: #F34444;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.6rem;
+}
 .date p {
     color: #5C5C5C;
 }
@@ -85,15 +105,17 @@ b {
 }
 .text-left {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     border-bottom: 3px solid #F34444;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
     font-size: 1.5rem;
-    font-family: 'Fjalla One';
-
+    line-height: 1;
+}
+.text-center {
+    text-align: center;
 }
 
 .post_title {
@@ -110,14 +132,11 @@ b {
 .post_no {
     text-align: right;
     padding-right:20px; 
-    width: 250px;
-    height: 100px
-    text-align: left;
     font-family: 'Neue Montreal';
     overflow: hidden;
     font-size: 30px;
     font-weight: 900;
-    line-height: 2;
+    line-height: 1;
     letter-spacing: 4px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #F34444;
@@ -134,6 +153,18 @@ b {
     text-align: left;
     background-color: black;
 }
+.new_user_banner {
+    font-family: 'Inter';
+    font-size: 1.1rem;
+    color: white;
+    font-size: 1.5em;
+    padding: 20px;
+    border: 3px solid blue;
+    margin: 10px;
+}
+.new_user_banner i {
+    text-decoration: underline;
+}
 
 .admin {
     max-width: 700px;
@@ -149,6 +180,7 @@ b {
     margin: 0px auto;
     padding: 10px 10px;
     border: 0px solid red;
+
 }
 
 .posts {
@@ -160,6 +192,8 @@ b {
     max-width: 1000px;
     text-align: left;
     background-color: black;
+    overflow-wrap: break-word;
+    overflow-x: auto;
 }
 
 .read-more {
@@ -172,7 +206,7 @@ b {
     border: 0px solid transparent;
     margin: 10px 0px;
     -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
 }
 .read-more a {
      font-family: 'Inter';
@@ -186,21 +220,35 @@ b {
 }
 
 .text {
-    
     font-size: 1.2rem;
     padding: 20px 20px;
     display: table;
-    width: 100%;
     vertical-align: middle;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: scroll;
+    text-overflow: ellipsis;
+}
+.text a {
+    font-weight: normal;
+    color: ghostwhite;
+    border-bottom: 3px solid #F34444;
+    box-shadow: inset 0 -0.1rem 0 0 #F34444;
+    transition: box-shadow 0.2s;
+}
+.text a:hover {
+    
+    box-shadow: inset 0 -2.5rem 0 0 #F34444;
+}
+.delete-popup {
+    margin: 20px;
 
 }
-
 .date {
     font-size: 1rem;
     padding-left: 20px;
 }
-.upper-case_time {
-    text-transform: uppercase;
+.time {
     font-weight: bold;
     font-family: 'Inter';
     letter-spacing: 1px;
@@ -348,34 +396,17 @@ label {
     background-color: #F34444;
     height: 30px;
     width: 30px;
-    transition: all 400ms cubic-bezier(0.83, 0, 0.17, 1);
+    transition: all .5s cubic-bezier(0.83, 0, 0.17, 1);
     overflow: hidden;
 }
 .logout-btn:hover  {
     color: black;
     letter-spacing: 10px;
 }
-nav {
-    text-align: right;
-    background: #1B1717;
-    margin-top: 100px;
-    color: #F34444;
+.logout-btn img {
+    padding-bottom: 4px;
 }
-.top-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-nav a {
-    font-family: "Fjalla One";
-    text-align: center;
-    color: #F34444;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 1.6rem;
-}
+
 
 #hint_id_password1 {
     display: none;
