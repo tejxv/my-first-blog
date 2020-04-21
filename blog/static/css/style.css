@@ -65,6 +65,9 @@ h2 {
     font-size: 30px;
     padding-left: 20px;
 }
+h2 a {
+    color: white;
+}
 
 body::-webkit-scrollbar {
   width: 1rem;
