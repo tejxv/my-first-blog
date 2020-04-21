@@ -12,7 +12,7 @@
                     <form method="POST">{% csrf_token %}
                     <div class="delete-popup">
                         <p> Are you sure?</p>
-                        <p><button class="btn btn-outline-danger" type="submit">DELETE POST</button>
+                        <p><button class="btn btn-outline-danger mr-2" type="submit">DELETE POST</button>
                         <a class="btn btn-outline-secondary" href="{% url 'post_detail' pk=post.pk %}">Cancel</a></p>
                     </div>
                     </form>

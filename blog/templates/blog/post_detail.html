@@ -1,32 +1,55 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-
+-
 <div class="cposts">
     <div class="blockquote text-center">
         <div class="posts">
             <div class="left-padding">
-            	<div class="text-left">
+                <div class="text-left">
                     <div class="post_title">{{ post.title }}
                     </div>
                 </div>
-
-                    {% if post.author == user %}
-                    <div class="delete-popup">
-                        <p><a class="btn btn-outline-danger" href="{% url 'post_delete' pk=post.pk %}">Delete Post</a>
+                {% if post.author == user %}
+                <div class="delete-popup">
+                    <p><a class="btn btn-outline-danger mr-2" href="{% url 'post_delete' pk=post.pk %}">Delete Post</a>
                         <a class="btn btn-outline-secondary" href="{% url 'post_edit' pk=post.pk %}">Edit</a></p>
-                    </div>
-                    {% endif %}
-                    
+                </div>
+                {% endif %}
                 <div class="text">
                     <p>{{ post.text|linebreaksbr|urlize }}</p>
                 </div>
-                <div class="date">          
-                    <p><b> — {{ post.author|default_if_none:"Anonymous User"}}</b><div class="time">{{ post.published_date|date:"j F Y @ h:i A" }}
-                    ({{ post.published_date|timesince }} ago)</div></p>
+                <div class="date">
+                    <p><b> — {{ post.author|default_if_none:"Anonymous User"}}</b>
+                        <div class="time">{{ post.published_date|date:"j F Y, h:i A" }}
+                            ({{ post.published_date|timesince }} ago)</div>
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <div class="comment-header">
+            <div class="comment-box">COMMENT BOX</div>
+            <div class="comment-count">
+        <a class="btn btn-outline-primary" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment as {{request.user}}</a>
+        </div>
+        </div>
+        
 
+            {% for comment in post.comments.all %}
+
+            <div class="comment">
+                <div class="comment-display-flex">
+                    <p><b>— {{ comment.author }}</b></p>
+                    <div class="comment-time">{{ comment.created_date|date:"j F Y, h:i A" }}</div>
+                </div>
+                <p>{{ comment.text|linebreaks }}</p>
+                
+            </div>
+
+            {% empty %}
+
+            <p>it's very quiet in here</p>
+
+            {% endfor %}
+
+</div>
 {% endblock %}

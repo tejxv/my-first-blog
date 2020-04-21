@@ -1,11 +1,16 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
+
 <div class="cposts">
+	<div class="text-center">
+        <div class="compose" style="text-decoration: none;"><a href="#">Posting as, <b>{{request.user}}!</b></a></div>
+    </div>
     <div class="posts"><form method="POST" class="token" autocomplete="off">{% csrf_token %}
     	<br>
         {{ form|crispy }}
         <center><button type="submit" class="submit">POST</button></center>
     </form></div>
     </div>
+
 {% endblock %}

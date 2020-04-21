@@ -1,5 +1,14 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+
+{% if user.is_authenticated %}
+<div class="cposts">
+    <div class="text-center">
+        <div class="compose" style="text-decoration: none;"><a href="{% url 'post_new' %}">Hi, <b>{{request.user}}!</b></a></div>
+    </div>
+</div>
+{% endif %}
+
 {% for post in posts %}
 
 
@@ -19,8 +28,27 @@
                 </div>
                 {% endif %}
                 <div class="date">        	
-                    <p><b> — {{ post.author|default_if_none:"Anonymous User"}}</b><div class="time">{{ post.published_date|date:"j F Y @ h:i A" }}
-                    ({{ post.published_date|timesince }} ago)</div></p>
+                    <p><b> — {{ post.author|default_if_none:"Anonymous User"}} {% if post.author.is_staff %}<span class="mod-badge">ADMIN</span>{% endif %}</b>
+                        <div class="time">{{ post.published_date|date:"j F Y, h:i A" }}
+                    ({{ post.published_date|timesince }} ago)
+
+                    {% if post.comments.count < 1 %}
+                    <div class="comment-count">
+                                <a class="btn btn-outline-primary" href="{% url 'post_detail' pk=post.pk %}">Add Comment</a>
+                    </div>
+                    {% elif post.comments.count == 1 %}
+                    <div class="comment-count">
+                                <a class="btn btn-outline-primary" href="{% url 'post_detail' pk=post.pk %}">{{ post.comments.count }} Comment</a>
+                    </div>
+                    {% elif post.comments.count > 1 %}
+                    
+                    <div class="comment-count">
+                                <a class="btn btn-outline-primary" href="{% url 'post_detail' pk=post.pk %}">{{ post.comments.count }} Comments</a>
+                    </div>
+                    {% endif %}
+                    </div>
+                </div></p>
+                    
                 </div>
             </div>
         </div>

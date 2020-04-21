@@ -1,16 +1,11 @@
 @import url('https://rsms.me/inter/inter.css');
 
-@supports (font-variation-settings: normal) {
-    html {
-        font-family: 'Inter var', sans-serif;
-    }
-}
-
 @font-face {
     font-family: 'Neue Montreal';
     src: url(https://cdn.shopify.com/s/files/1/2642/6578/t/18/assets/MonumentExtended-Ultrabold.woff) format('woff');
-    font-weight: bold;
+    font-weight: normal;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -25,17 +20,20 @@ body {
 
 
 body {
-    background: black;
+    background-color: black;
 }
+
 .asteriskField {
     display: none;
 }
+
 a {
     font-family: 'Neue Montreal';
     text-decoration: none;
-    color: white;
+    color: black;
     transition: all .2s ease-in-out;
 }
+
 a:hover {
     color: #ab8989;
     text-decoration: none;
@@ -53,15 +51,31 @@ h1 {
     -webkit-backdrop-filter: blur(30px) contrast(90%);
     padding: 10px;
 }
+h1 a {
+    color: white;
+}
+
 h2 {
     margin-top: 20px;
     font-family: Neue Montreal;
     letter-spacing: 2px;
     font-style: normal;
     font-weight: 900;
-    color: #F34444; 
+    color: #F34444;
     font-size: 30px;
     padding-left: 20px;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
 }
 
 p {
@@ -76,32 +90,50 @@ p a {
     font-weight: 900;
     color: #5c5c5c;
 }
+
 nav {
-    text-align: right;
-    background: #1B1717;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    background: #191921;
     margin-top: 80px;
     color: #F34444;
 }
+
+nav a {
+    white-space: nowrap;
+    font-family: "Fjalla One";
+    text-align: center;
+    margin: 2rem;
+    font-size: 1.6rem;
+}
+
 .top-nav {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
     box-sizing: border-box;
 }
-nav a {
-    font-family: "Fjalla One";
-    text-align: center;
-    color: #F34444;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 1.6rem;
-}
+
 .date p {
     color: #5C5C5C;
 }
+
 b {
     color: #F34444
+}
+
+.github-embeds-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.github-embeds {
+    margin: 0px 10px;
 }
 .text-left {
     display: flex;
@@ -114,6 +146,7 @@ b {
     font-size: 1.5rem;
     line-height: 1;
 }
+
 .text-center {
     text-align: center;
 }
@@ -129,9 +162,10 @@ b {
     overflow-y: hidden;
     overflow-x: auto;
 }
+
 .post_no {
     text-align: right;
-    padding-right:20px; 
+    padding-right: 20px;
     font-family: 'Neue Montreal';
     overflow: hidden;
     font-size: 30px;
@@ -153,6 +187,7 @@ b {
     text-align: left;
     background-color: black;
 }
+
 .new_user_banner {
     font-family: 'Inter';
     font-size: 1.1rem;
@@ -162,6 +197,7 @@ b {
     border: 3px solid blue;
     margin: 10px;
 }
+
 .new_user_banner i {
     text-decoration: underline;
 }
@@ -196,6 +232,18 @@ b {
     overflow-x: auto;
 }
 
+.mod-badge {
+    display: inline-block;
+    font-size: smaller;
+    text-align: center;
+    line-height: 1;
+    background-color: #ff3e3e;
+    color: black;
+    border-radius: 2px;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
 .read-more {
     display: table;
     width: 100%;
@@ -208,11 +256,13 @@ b {
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.2s;
 }
+
 .read-more a {
-     font-family: 'Inter';
-     font-weight: bold;
-     color: white;
+    font-family: 'Inter';
+    font-weight: bold;
+    color: white;
 }
+
 .read-more:hover {
     background-color: #F34444;
     color: black;
@@ -222,13 +272,13 @@ b {
 .text {
     font-size: 1.2rem;
     padding: 20px 20px;
-    display: table;
     vertical-align: middle;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    overflow: scroll;
+    overflow: auto;
     text-overflow: ellipsis;
 }
+
 .text a {
     font-weight: normal;
     color: ghostwhite;
@@ -236,24 +286,36 @@ b {
     box-shadow: inset 0 -0.1rem 0 0 #F34444;
     transition: box-shadow 0.2s;
 }
+
 .text a:hover {
-    
+
     box-shadow: inset 0 -2.5rem 0 0 #F34444;
 }
+.text {
+}
+
 .delete-popup {
     margin: 20px;
 
 }
+
 .date {
     font-size: 1rem;
     padding-left: 20px;
 }
+
 .time {
     font-weight: bold;
     font-family: 'Inter';
     letter-spacing: 1px;
+    margin-right: 20px;
     color: #5C5C5C;
+    display: flex;
+    flex-flow: wrap-reverse;
+    justify-content: space-between;
+    align-items: baseline;
 }
+
 .forms {
     font-family: 'Inter';
     text-transform: uppercase;
@@ -269,6 +331,7 @@ b {
     text-align: left;
     background-color: black;
 }
+
 .form-control {
     display: block;
     width: 100%;
@@ -285,8 +348,9 @@ b {
     background-clip: padding-box;
     border: 3px solid #F34444;
     border-radius: 5px;
-    transition: border-color .5s ease-in-out,box-shadow .5s ease-in-out;
+    transition: border-color .5s ease-in-out, box-shadow .5s ease-in-out;
 }
+
 .new_acc_greeting {
     font-family: 'Inter';
     font-size: 30px;
@@ -295,24 +359,27 @@ b {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: white;
-  transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white;
+    transition: background-color 5000s ease-in-out 0s;
 }
+
 .form-control:focus {
     color: white;
     background-color: black;
     border-color: #80bdff;
     outline: 0;
-    box-shadow: 0 0 0 .3rem rgba(0,123,255,.25);
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
 }
+
 .token {
     padding: 20px 40px;
 }
+
 label {
     text-transform: uppercase;
     font-family: 'Inter';
@@ -320,6 +387,7 @@ label {
     font-weight: bold;
     color: white;
 }
+
 .submit {
     border: 3px solid #F34444;
     margin-bottom: 10px;
@@ -344,13 +412,13 @@ label {
 .border-bottom h2 {
     padding: 0;
 }
+
 .text-muted {
     display: none;
 }
+
 .compose {
     text-align: center;
-    border-top: 2px solid hotpink;
-    border-bottom: 2px solid hotpink;
     border-radius: 5px;
     display: inline-block;
     padding: 0px 10px;
@@ -358,9 +426,21 @@ label {
     word-wrap: normal;
     margin: 20px auto;
     max-width: 100%;
+    box-sizing: border-box;
 }
+
 .compose a {
     font-family: 'Inter';
+    font-size: 1.2rem;
+    font-weight: bolder;
+    padding: .5rem 2rem;
+    border: 1px solid transparent;
+    border-radius: .3rem;
+    color: #007bff;
+}
+.compose a:hover {
+    border: 1px solid #007bff;
+
 }
 
 
@@ -388,30 +468,156 @@ label {
     border: none;
 }
 
-.logout-btn  {
-    color: black;
+.logout-btn {
+    color: #ffffff;
     font-family: 'Inter';
-    font-weight: bold;
-    border: 3px solid #F34444;
-    background-color: #F34444;
-    height: 30px;
-    width: 30px;
-    transition: all .5s cubic-bezier(0.83, 0, 0.17, 1);
+    font-weight: normal;
+    padding: 5px 5px;
+    transition: all .3s ease;
     overflow: hidden;
-}
-.logout-btn:hover  {
-    color: black;
-    letter-spacing: 10px;
-}
-.logout-btn img {
-    padding-bottom: 4px;
+    font-weight: bold;
+    box-sizing: border-box;
+
 }
 
+.logout-btn:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 20px #ffffff;
+}
 
 #hint_id_password1 {
     display: none;
 }
 
-@media (max-width: 400px) {
-    /** WIP **/
+.comment {
+    margin: 20px auto;
+    border: 3px solid #F34444;
+    padding: 20px 20px 20px 20px;
+    text-align: left;
+    max-width: 1000px;
+    line-height: 1;
+}
+
+.comment-time {
+    font-weight: bold;
+    font-size: smaller;
+    line-height: 1;
+    font-family: 'Inter';
+    letter-spacing: 1px;
+    color: #5C5C5C;
+}
+
+.comment-display-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+.comment-display-flex p b {
+    margin-right: 10px;
+}
+
+
+.comment-box {
+    line-height: 1;
+
+}
+.comment-count a {
+    
+    font-family: 'Inter';
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 18px;
+    background: url(https://media1.giphy.com/media/xTiTnjbjIthx66UKI0/source.gif);
+    background-size: 0%;
+
+}
+.comment-count a:hover {
+    background: url(https://media1.giphy.com/media/xTiTnjbjIthx66UKI0/source.gif);
+    background-position: center;
+    background-size: 150%;
+    color: black;
+    border: 1px solid transparent;
+}
+.comment-header {
+    display: flex;
+    align-content: space-around;
+    align-items: baseline;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: 'Neue Montreal';
+    color: #007bff;
+    font-size: 2em;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+.comment-submit-form {
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+}
+.comment-submit-form button {
+    font-family: 'Inter';
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 18px;
+    background: url(https://media1.giphy.com/media/xTiTnjbjIthx66UKI0/source.gif);
+    background-size: 0%;
+}
+.comment-submit-form button:hover {
+    background: url(https://media1.giphy.com/media/xTiTnjbjIthx66UKI0/source.gif);
+    background-position: center;
+    background-size: 150%;
+    color: black;
+    border: 1px solid transparent;
+}
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+    
+    nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    }
+
+    nav a {
+    margin: 0rem;
+    font-size: 1rem;
+    }
+    .time {
+        font-weight: normal;
+    }
+    .comment-count {
+    margin-bottom: 1rem;
+    }
+    .comment-count a {
+        margin-top: 10px;
+        font-size: .8rem;
+    }
+    .post_title, .post_no, h1 {
+        font-size: 1.5rem;
+    }
+    .text p {
+        font-size: 1rem;
+    }
+    .github-embeds-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .github-embeds {
+        margin: 10px 0px;
+    }
+    .comment-box {
+        margin-top: 10px;
+        font-size: 1.55rem;
+    }
+    .comment-time {
+        font-weight: normal;
+        white-space: nowrap;
+    }
 }
