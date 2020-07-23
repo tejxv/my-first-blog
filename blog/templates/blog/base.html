@@ -1,83 +1,71 @@
 {% load static %}
-
 <html>
-
-<head>
-    {% if post.title %}
-    <title>{{ post.title }}&nbsp;&nbsp;/&nbsp;&nbsp;TheOpenBlog</title>
-    {% else %}
-    <title>TheOpenBlog</title>
-    {% endif %}
-
-    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes" name="viewport">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/af18556798.js" crossorigin="anonymous"></script>
-    <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" >
-     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80313533-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    
-    gtag('config', 'UA-80313533-1');
-    </script>
-     
-</head>
-<div class="top-nav">
-    <h1><b><a href="/" style="text-decoration: none;">&nbsp;THE OPEN BLOG.&nbsp;</a></b></h1>
-</div>
-
- <nav>
-    {% if user.is_authenticated %}
-    <div><a href="{% url 'post_new' %}" class="logout-btn"><i class="fas fa-plus-circle"></i> POST</a></div>
-
-    <div><a href="{% url 'blog-about' %}" class="logout-btn"><i class="fas fa-info-circle"></i> ABOUT</a></div>
-
-    <div><a href="/logout" class="logout-btn"><i class="fas fa-door-open"></i> LOGOUT</a></div>
-    {% elif user.is_anonymous %}
-    <div><a href="{% url 'post_new' %}" class="logout-btn"><i class="fas fa-plus-circle"></i> POST</a></div>
-
-    <div><a href="{% url 'blog-about' %}" class="logout-btn"><i class="fas fa-info-circle"></i> ABOUT</a></div>
-
-    <div><a href="/login" class="logout-btn"><i class="fas fa-door-open"></i> LOGIN</a></div>
-	{% endif %}
-</nav>
-
-{% if user.is_anonymous %}
-<div class="cposts">
-    <div class="greetings-banner">
-
-        <h2><a href="/login">LOGIN</a> / <a href="/register">CREATE</a> ACCOUNT</h2>
-            <div class="text"><p>The Open Blog exists to convey shit that nobody cares about.</p>
-<a class="github-button" href="https://github.com/tejxv/my-first-blog" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @tejxv on GitHub"> Open on GitHub </a></div>
-        </div>
-</div>
-{% endif %}
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-
-<body>
-    {{ message }}
-    {% if messages %}
-    {% for message in messages %}
-
-    <div class="text-center">
-            <div class="new_user_banner">
-                Welcome to the open blog, <i>{{ message }}!</i><br>now you can Login!
-            </div>    
+    <head>
+        {% if post.title %}
+            <title>{{ post.title }}&nbsp;&nbsp;/&nbsp;&nbsp;TheOpenBlog</title>
+        {% else %}
+            <title>TheOpenBlog</title>
+        {% endif %}
+        <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes" name="viewport">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/af18556798.js" crossorigin="anonymous"></script>
+        <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" >
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80313533-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-80313533-1');
+        </script>
+        <!-- ca-pub snippet -->
+        <script data-ad-client="ca-pub-1125130160527169" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+    </head>
+    <div class="top-nav">
+        <h1><b><a href="/" style="text-decoration: none;">&nbsp;THE OPEN BLOG.&nbsp;</a></b></h1>
     </div>
-   
-    {% endfor %}
+    <nav>
+        {% if user.is_authenticated %}
+            <div><a href="{% url 'post_new' %}" class="logout-btn"><i class="fas fa-plus-circle"></i> POST</a></div>
+            <div><a href="{% url 'blog-about' %}" class="logout-btn"><i class="fas fa-info-circle"></i> ABOUT</a></div>
+            <div><a href="/logout" class="logout-btn"><i class="fas fa-door-open"></i> LOGOUT</a></div>
+            {% elif user.is_anonymous %}
+            <div><a href="{% url 'post_new' %}" class="logout-btn"><i class="fas fa-plus-circle"></i> POST</a></div>
+            <div><a href="{% url 'blog-about' %}" class="logout-btn"><i class="fas fa-info-circle"></i> ABOUT</a></div>
+            <div><a href="/login" class="logout-btn"><i class="fas fa-door-open"></i> LOGIN</a></div>
+        {% endif %}
+    </nav>
+    {% if user.is_anonymous %}
+        <div class="cposts">
+            <div class="greetings-banner">
+                <h2><a href="/login">LOGIN</a> / <a href="/register">CREATE</a> ACCOUNT</h2>
+                <div class="text"><p>The Open Blog exists to convey shit that nobody cares about.</p>
+                <a class="github-button" href="https://github.com/tejxv/my-first-blog" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @tejxv on GitHub"> Open on GitHub </a></div>
+            </div>
+        </div>
     {% endif %}
-    {% block content %}
-    {% endblock %}
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <body>
+        {{ message }}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="text-center">
+                    <div class="new_user_banner">
+                        Welcome to the open blog, <i>{{ message }}!</i><br>now you can Login!
+                    </div>
+                </div>
+                
+            {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </body>
 </html>
